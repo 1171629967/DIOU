@@ -21,6 +21,17 @@
     return animation;
 }
 
+/** 横向移动(to) */
++ (CABasicAnimation *)moveToXWithTime:(float)time X:(NSNumber *)x
+{
+    CABasicAnimation *animation=[CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+    animation.toValue=x;
+    animation.duration=time;
+    animation.removedOnCompletion=NO;
+    animation.fillMode=kCAFillModeForwards;
+    return animation;
+}
+
 //纵向移动
 + (CABasicAnimation *)moveYWithTime:(float)time Y:(NSNumber *)y
 {

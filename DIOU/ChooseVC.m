@@ -9,6 +9,7 @@
 #import "ChooseVC.h"
 #import "WLXAppDelegate.h"
 #import "AnimationHelper.h"
+#import "SpaceVC.h"
 
 #define ANIMATION_DURATION 0.5//预定义动画执行时间为0.5秒
 
@@ -39,9 +40,10 @@
     [self performSelector:@selector(showCircle4) withObject:nil afterDelay:2.9];
     [self performSelector:@selector(showCircle5) withObject:nil afterDelay:3.2];
     
-//    self.iv_vip.userInteractionEnabled=YES;
-//    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
-//    [self.iv_vip addGestureRecognizer:singleTap];
+    //依次给圈圈添加点击监听
+    self.iv_circle1.userInteractionEnabled=YES;
+    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage1)];
+    [self.iv_circle1 addGestureRecognizer:singleTap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,15 +116,10 @@
     self.iv_circle5.hidden = NO;
 }
 
--(void)onClickImage{
-//    HomeVCViewController *homeVC = [[HomeVCViewController alloc] init];
-//    WLXAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//    appDelegate.window.rootViewController = homeVC;
-//    
-//    CATransition *animation = [CATransition animation];
-//    [animation setDuration:2];
-//    animation.type = @"rippleEffect"; //淡化
-//    [[UIApplication sharedApplication].keyWindow.layer addAnimation:animation forKey:nil];
+-(void)onClickImage1
+{
+    SpaceVC *spaceVC = [[SpaceVC alloc] init];
+    [self presentModalViewController:spaceVC animated:YES];
 }
 
 

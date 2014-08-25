@@ -13,6 +13,8 @@
 //横向移动
 + (CABasicAnimation *)moveXWithTime:(float)time X:(NSNumber *)x;
 
++ (CABasicAnimation *)moveToXWithTime:(float)time X:(NSNumber *)x;
+
 //纵向移动
 + (CABasicAnimation *)moveYWithTime:(float)time Y:(NSNumber *)Y;
 

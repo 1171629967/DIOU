@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0916C5E219AB509000AEC968 /* SpaceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0916C5E019AB509000AEC968 /* SpaceVC.m */; };
+		0916C5E319AB509000AEC968 /* SpaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0916C5E119AB509000AEC968 /* SpaceVC.xib */; };
 		0930E09F19A77D67007FDE1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0930E09E19A77D67007FDE1B /* Foundation.framework */; };
 		0930E0A119A77D67007FDE1B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0930E0A019A77D67007FDE1B /* CoreGraphics.framework */; };
 		0930E0A319A77D67007FDE1B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0930E0A219A77D67007FDE1B /* UIKit.framework */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0916C5DF19AB509000AEC968 /* SpaceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceVC.h; sourceTree = "<group>"; };
+		0916C5E019AB509000AEC968 /* SpaceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceVC.m; sourceTree = "<group>"; };
+		0916C5E119AB509000AEC968 /* SpaceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpaceVC.xib; sourceTree = "<group>"; };
 		0930E09B19A77D67007FDE1B /* DIOU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIOU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930E09E19A77D67007FDE1B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0930E0A019A77D67007FDE1B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +134,9 @@
 				0930E0D219A785DF007FDE1B /* ChooseVC.h */,
 				0930E0D319A785DF007FDE1B /* ChooseVC.m */,
 				0930E0D419A785DF007FDE1B /* ChooseVC.xib */,
+				0916C5DF19AB509000AEC968 /* SpaceVC.h */,
+				0916C5E019AB509000AEC968 /* SpaceVC.m */,
+				0916C5E119AB509000AEC968 /* SpaceVC.xib */,
 				0930E0B019A77D67007FDE1B /* Images.xcassets */,
 				0930E0A519A77D67007FDE1B /* Supporting Files */,
 			);
@@ -253,6 +261,7 @@
 				09AEE53E19AA469E00B3545B /* HomeVC.xib in Resources */,
 				0930E0B119A77D67007FDE1B /* Images.xcassets in Resources */,
 				0930E0D619A785DF007FDE1B /* ChooseVC.xib in Resources */,
+				0916C5E319AB509000AEC968 /* SpaceVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +285,7 @@
 				0930E0AB19A77D67007FDE1B /* main.m in Sources */,
 				09AEE53D19AA469E00B3545B /* HomeVC.m in Sources */,
 				0930E0D519A785DF007FDE1B /* ChooseVC.m in Sources */,
+				0916C5E219AB509000AEC968 /* SpaceVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DIOU/DIOU-Prefix.pch";
 				INFOPLIST_FILE = "DIOU/DIOU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,6 +421,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DIOU/DIOU-Prefix.pch";
 				INFOPLIST_FILE = "DIOU/DIOU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
