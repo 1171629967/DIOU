@@ -10,6 +10,7 @@
 #import "WLXAppDelegate.h"
 #import "AnimationHelper.h"
 #import "SpaceVC.h"
+#import "RoomVC.h"
 
 #define ANIMATION_DURATION 0.5//预定义动画执行时间为0.5秒
 
@@ -42,8 +43,12 @@
     
     //依次给圈圈添加点击监听
     self.iv_circle1.userInteractionEnabled=YES;
-    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage1)];
-    [self.iv_circle1 addGestureRecognizer:singleTap];
+    UITapGestureRecognizer *singleTap1 =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage1)];
+    [self.iv_circle1 addGestureRecognizer:singleTap1];
+    
+    self.iv_circle2.userInteractionEnabled=YES;
+    UITapGestureRecognizer *singleTap2 =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage2)];
+    [self.iv_circle2 addGestureRecognizer:singleTap2];
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,6 +125,11 @@
 {
     SpaceVC *spaceVC = [[SpaceVC alloc] init];
     [self presentModalViewController:spaceVC animated:YES];
+}
+-(void)onClickImage2
+{
+    RoomVC *roomVC = [[RoomVC alloc] init];
+    [self presentModalViewController:roomVC animated:YES];
 }
 
 

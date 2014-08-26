@@ -23,6 +23,8 @@
 		0930E0C419A77D67007FDE1B /* DIOUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930E0C319A77D67007FDE1B /* DIOUTests.m */; };
 		0930E0D519A785DF007FDE1B /* ChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930E0D319A785DF007FDE1B /* ChooseVC.m */; };
 		0930E0D619A785DF007FDE1B /* ChooseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0930E0D419A785DF007FDE1B /* ChooseVC.xib */; };
+		099C660C19ACB7C200388D8D /* RoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C660A19ACB7C200388D8D /* RoomVC.m */; };
+		099C660D19ACB7C200388D8D /* RoomVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 099C660B19ACB7C200388D8D /* RoomVC.xib */; };
 		09AEE53919AA369900B3545B /* AnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AEE53819AA369900B3545B /* AnimationHelper.m */; };
 		09AEE53D19AA469E00B3545B /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AEE53B19AA469E00B3545B /* HomeVC.m */; };
 		09AEE53E19AA469E00B3545B /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AEE53C19AA469E00B3545B /* HomeVC.xib */; };
@@ -61,6 +63,9 @@
 		0930E0D219A785DF007FDE1B /* ChooseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseVC.h; sourceTree = "<group>"; };
 		0930E0D319A785DF007FDE1B /* ChooseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseVC.m; sourceTree = "<group>"; };
 		0930E0D419A785DF007FDE1B /* ChooseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseVC.xib; sourceTree = "<group>"; };
+		099C660919ACB7C200388D8D /* RoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomVC.h; sourceTree = "<group>"; };
+		099C660A19ACB7C200388D8D /* RoomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomVC.m; sourceTree = "<group>"; };
+		099C660B19ACB7C200388D8D /* RoomVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomVC.xib; sourceTree = "<group>"; };
 		09AEE53719AA369900B3545B /* AnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationHelper.h; sourceTree = "<group>"; };
 		09AEE53819AA369900B3545B /* AnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationHelper.m; sourceTree = "<group>"; };
 		09AEE53A19AA469E00B3545B /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -137,6 +142,9 @@
 				0916C5DF19AB509000AEC968 /* SpaceVC.h */,
 				0916C5E019AB509000AEC968 /* SpaceVC.m */,
 				0916C5E119AB509000AEC968 /* SpaceVC.xib */,
+				099C660919ACB7C200388D8D /* RoomVC.h */,
+				099C660A19ACB7C200388D8D /* RoomVC.m */,
+				099C660B19ACB7C200388D8D /* RoomVC.xib */,
 				0930E0B019A77D67007FDE1B /* Images.xcassets */,
 				0930E0A519A77D67007FDE1B /* Supporting Files */,
 			);
@@ -262,6 +270,7 @@
 				0930E0B119A77D67007FDE1B /* Images.xcassets in Resources */,
 				0930E0D619A785DF007FDE1B /* ChooseVC.xib in Resources */,
 				0916C5E319AB509000AEC968 /* SpaceVC.xib in Resources */,
+				099C660D19ACB7C200388D8D /* RoomVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099C660C19ACB7C200388D8D /* RoomVC.m in Sources */,
 				09AEE53919AA369900B3545B /* AnimationHelper.m in Sources */,
 				0930E0AF19A77D67007FDE1B /* WLXAppDelegate.m in Sources */,
 				0930E0AB19A77D67007FDE1B /* main.m in Sources */,
