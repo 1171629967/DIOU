@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomVC">
             <connections>
                 <outlet property="iv_back" destination="lMr-Qm-HJQ" id="ITc-HL-yWM"/>
+                <outlet property="iv_shafa" destination="wNZ-jM-dZl" id="ttL-5f-KbG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,6 +60,10 @@
                         <action selector="dismissVC:" destination="-1" eventType="touchUpInside" id="hwD-Dy-aON"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNZ-jM-dZl">
+                    <rect key="frame" x="472" y="250" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.71971943430656937" green="0.88409557481751821" blue="0.78926208941605824" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

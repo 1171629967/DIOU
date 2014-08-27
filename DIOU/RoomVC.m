@@ -45,6 +45,15 @@
     //设置scrollview可滚动范围
     [sv setContentSize:CGSizeMake(200*8+10*(8+1), 120)];
     
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 1; i < 9; i++) {
+        [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",i]]];
+    }
+    [self.iv_shafa setAnimationImages:array];
+    [self.iv_shafa setAnimationDuration:1];
+    [self.iv_shafa startAnimating];
+    
 }
 
 - (void)didReceiveMemoryWarning

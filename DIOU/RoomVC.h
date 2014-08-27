@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *iv_back;
 - (IBAction)dismissVC:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIImageView *iv_shafa;
 
 @end
