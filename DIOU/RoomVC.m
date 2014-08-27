@@ -34,16 +34,16 @@
     sv.backgroundColor = [UIColor grayColor];
     [self.view addSubview:sv];
     
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 6; i++) {
         UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(i*200+10*(i+1), 10, 200, 100)];
         [iv setTag:200+i];
-        UIImage *image = [UIImage imageNamed:@"aa"];
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"wood_icon%d.png",i]];
         [iv setImage:image];
         [sv addSubview:iv];
     }
     
     //设置scrollview可滚动范围
-    [sv setContentSize:CGSizeMake(200*8+10*(8+1), 120)];
+    [sv setContentSize:CGSizeMake(200*6+10*(6+1), 120)];
     
     
     NSMutableArray *array = [NSMutableArray array];
