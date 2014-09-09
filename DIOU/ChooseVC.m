@@ -69,7 +69,7 @@
     CABasicAnimation *rotation = [AnimationHelper rotateWithTime:ANIMATION_DURATION ToRotateValue:[NSNumber numberWithFloat:3.1415926]];
     [self.iv_circle1.layer addAnimation:X_animation forKey:nil];
     [self.iv_circle1.layer addAnimation:Y_animation forKey:nil];
-    [self.iv_circle1.layer addAnimation:rotation forKey:nil];
+    //[self.iv_circle1.layer addAnimation:rotation forKey:nil];
     self.iv_circle1.hidden = NO;
 }
 - (void)showCircle2
@@ -81,7 +81,7 @@
     CABasicAnimation *rotation = [AnimationHelper rotateWithTime:ANIMATION_DURATION ToRotateValue:[NSNumber numberWithFloat:3.1415926]];
     [self.iv_circle2.layer addAnimation:X_animation forKey:nil];
     [self.iv_circle2.layer addAnimation:Y_animation forKey:nil];
-    [self.iv_circle2.layer addAnimation:rotation forKey:nil];
+    //[self.iv_circle2.layer addAnimation:rotation forKey:nil];
     self.iv_circle2.hidden = NO;
 }
 - (void)showCircle3
@@ -93,7 +93,7 @@
     CABasicAnimation *rotation = [AnimationHelper rotateWithTime:ANIMATION_DURATION ToRotateValue:[NSNumber numberWithFloat:3.1415926]];
     [self.iv_circle3.layer addAnimation:X_animation forKey:nil];
     [self.iv_circle3.layer addAnimation:Y_animation forKey:nil];
-    [self.iv_circle3.layer addAnimation:rotation forKey:nil];
+    //[self.iv_circle3.layer addAnimation:rotation forKey:nil];
     self.iv_circle3.hidden = NO;
 }
 - (void)showCircle4
@@ -105,7 +105,7 @@
     CABasicAnimation *rotation = [AnimationHelper rotateWithTime:ANIMATION_DURATION ToRotateValue:[NSNumber numberWithFloat:3.1415926]];
     [self.iv_circle4.layer addAnimation:X_animation forKey:nil];
     [self.iv_circle4.layer addAnimation:Y_animation forKey:nil];
-    [self.iv_circle4.layer addAnimation:rotation forKey:nil];
+    //[self.iv_circle4.layer addAnimation:rotation forKey:nil];
     self.iv_circle4.hidden = NO;
 }
 - (void)showCircle5
@@ -117,7 +117,7 @@
     CABasicAnimation *rotation = [AnimationHelper rotateWithTime:ANIMATION_DURATION ToRotateValue:[NSNumber numberWithFloat:3.1415926]];
     [self.iv_circle5.layer addAnimation:X_animation forKey:nil];
     [self.iv_circle5.layer addAnimation:Y_animation forKey:nil];
-    [self.iv_circle5.layer addAnimation:rotation forKey:nil];
+    //[self.iv_circle5.layer addAnimation:rotation forKey:nil];
     self.iv_circle5.hidden = NO;
 }
 

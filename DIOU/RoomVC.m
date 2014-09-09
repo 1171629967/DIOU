@@ -8,6 +8,7 @@
 
 #import "RoomVC.h"
 
+
 @interface RoomVC ()
 
 @end
@@ -46,15 +47,26 @@
     [sv setContentSize:CGSizeMake(200*6+10*(6+1), 120)];
     
     
-    NSMutableArray *array = [NSMutableArray array];
-    for (int i = 1; i < 9; i++) {
-        [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",i]]];
-    }
-    [self.iv_shafa setAnimationImages:array];
-    [self.iv_shafa setAnimationDuration:1];
-    [self.iv_shafa startAnimating];
+    
+    
+    circleView = [[FTCircleImageView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+    circleView.userInteractionEnabled = YES;
+    circleView.isSkipFrame = YES;
+    circleView.path360 = [[NSBundle mainBundle] resourcePath];
+    [self.view insertSubview:circleView atIndex:0];
+    circleView.count = 60;
+    circleView.curCount = 1;
+    circleView.preName = @"shafa2";
+    circleView.image = [UIImage imageNamed:@"shafa2_1.jpg"];
+    
+    
+    
     
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

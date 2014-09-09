@@ -11,6 +11,8 @@
 @interface SpaceVC : UIViewController
 {
     BOOL isRunningAnimation;
+    /** 没展开0  客厅展开1  卧室展开2  餐厅展开3*/
+    int currentState;
 }
 
 

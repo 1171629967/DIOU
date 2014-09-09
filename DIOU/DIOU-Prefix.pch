@@ -13,4 +13,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#define PAD_WIDTH 1024
+#define PAD_HEIGHT 768
+
 #endif

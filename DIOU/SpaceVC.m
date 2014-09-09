@@ -10,7 +10,7 @@
 #import "AnimationHelper.h"
 
 
-#define ANIMATION_DURATION 1.5//预定义动画执行时间为1.5秒
+#define ANIMATION_DURATION 0.8//预定义动画执行时间为0.8秒
 @interface SpaceVC ()
 
 @end
@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    currentState = 0;
     isRunningAnimation = NO;
     
     //依次给图片添加点击监听
@@ -64,36 +65,66 @@
 }
 
 
+
+
+- (void)animation1
+{
+    isRunningAnimation = YES;
+    self.iv_keting_small.hidden = YES;
+    self.iv_keting_big.hidden = NO;
+    [UIView transitionWithView:self.view duration:ANIMATION_DURATION options:UIViewAnimationOptionTransitionNone animations:^{
+        self.iv_canting_small.frame = CGRectMake(self.iv_canting_small.frame.origin.x+135, 0, PAD_WIDTH/3, PAD_HEIGHT);
+        self.iv_woshi_small.frame = CGRectMake(self.iv_woshi_small.frame.origin.x+135*2, 0, PAD_WIDTH/3, PAD_HEIGHT);
+    } completion:^(BOOL finished) {
+        isRunningAnimation = NO;
+        currentState = 1;
+    }];
+}
+
+- (void)animation2
+{
+    isRunningAnimation = YES;
+    self.iv_woshi_small.hidden = YES;
+    self.iv_woshi_big.hidden = NO;
+    [UIView transitionWithView:self.view duration:ANIMATION_DURATION options:UIViewAnimationOptionTransitionNone animations:^{
+        self.iv_keting_small.frame = CGRectMake(self.iv_keting_small.frame.origin.x-135, 0, PAD_WIDTH/3, PAD_HEIGHT);
+        self.iv_canting_small.frame = CGRectMake(self.iv_canting_small.frame.origin.x+135, 0, PAD_WIDTH/3, PAD_HEIGHT);
+    } completion:^(BOOL finished) {
+        isRunningAnimation = NO;
+        currentState = 2;
+    }];
+}
+
+- (void)animation3
+{
+    isRunningAnimation = YES;
+    self.iv_canting_small.hidden = YES;
+    self.iv_canting_big.hidden = NO;
+    [UIView transitionWithView:self.view duration:ANIMATION_DURATION options:UIViewAnimationOptionTransitionNone animations:^{
+        self.iv_keting_small.frame = CGRectMake(self.iv_keting_small.frame.origin.x-135, 0, PAD_WIDTH/3, PAD_HEIGHT);
+        self.iv_woshi_small.frame = CGRectMake(self.iv_woshi_small.frame.origin.x-135*2, 0, PAD_WIDTH/3, PAD_HEIGHT);
+    } completion:^(BOOL finished) {
+        isRunningAnimation = NO;
+        currentState = 3;
+    }];
+}
+
 /** 点击客厅小图片 */
 - (void)clickKetingSmall
 {
     if (isRunningAnimation) {
         return;
     }
-    
-    if (self.iv_keting_big.hidden == NO || self.iv_woshi_big.hidden == NO || self.iv_canting_big.hidden == NO) {
-        return;
+
+    if (currentState == 2 || currentState ==3 ) {
+        [self resetAllImage:1];
+    }
+    else
+    {
+        [self animation1];
     }
     
-    self.iv_keting_small.hidden = YES;
-    self.iv_woshi_small.hidden = NO;
-    self.iv_canting_small.hidden = NO;
-    self.iv_keting_big.hidden = NO;
-    self.iv_woshi_big.hidden = YES;
-    self.iv_canting_big.hidden = YES;
-    
-    isRunningAnimation = YES;
-    
-    CABasicAnimation *animation1 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:135]];
-    [self.iv_canting_small.layer addAnimation:animation1 forKey:nil];
-    CABasicAnimation *animation2 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:135*2]];
-    [self.iv_woshi_small.layer addAnimation:animation2 forKey:nil];
-    
-    [self performSelector:@selector(resetRunningAnimationState) withObject:nil afterDelay:ANIMATION_DURATION];
-    
-    
 }
-
 
 
 /** 点击客厅大图片 */
@@ -104,21 +135,10 @@
     }
     
     isRunningAnimation = YES;
-    
-    CABasicAnimation *animation1 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:-135]];
-    [self.iv_canting_small.layer addAnimation:animation1 forKey:nil];
-    CABasicAnimation *animation2 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:-135*2]];
-    [self.iv_woshi_small.layer addAnimation:animation2 forKey:nil];
-    
-    [self performSelector:@selector(stopAnimation2) withObject:nil afterDelay:ANIMATION_DURATION];
-    [self performSelector:@selector(resetRunningAnimationState) withObject:nil afterDelay:ANIMATION_DURATION];
+    [self resetAllImage:0];
 }
 
--(void)stopAnimation2
-{
-    self.iv_keting_big.hidden = YES;
-    self.iv_keting_small.hidden = NO;
-}
+
 
 /** 点击卧室小图片 */
 - (void)clickWoshiSmall
@@ -127,25 +147,15 @@
         return;
     }
     
-    if (self.iv_keting_big.hidden == NO || self.iv_woshi_big.hidden == NO || self.iv_canting_big.hidden == NO) {
-        return;
-    }
-    
-    self.iv_keting_small.hidden = NO;
-    self.iv_woshi_small.hidden = YES;
-    self.iv_canting_small.hidden = NO;
-    self.iv_keting_big.hidden = YES;
-    self.iv_woshi_big.hidden = NO;
-    self.iv_canting_big.hidden = YES;
-    
     isRunningAnimation = YES;
     
-    CABasicAnimation *animation1 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:-135]];
-    [self.iv_keting_small.layer addAnimation:animation1 forKey:nil];
-    CABasicAnimation *animation2 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:135]];
-    [self.iv_canting_small.layer addAnimation:animation2 forKey:nil];
-    
-    [self performSelector:@selector(resetRunningAnimationState) withObject:nil afterDelay:ANIMATION_DURATION];
+    if (currentState == 1 || currentState ==3 ) {
+        [self resetAllImage:2];
+    }
+    else
+    {
+        [self animation2];
+    }
 }
 
 /** 点击卧室大图片 */
@@ -155,22 +165,11 @@
         return;
     }
     
-    isRunningAnimation = YES;
     
-    CABasicAnimation *animation1 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:135]];
-    [self.iv_keting_small.layer addAnimation:animation1 forKey:nil];
-    CABasicAnimation *animation2 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:-135]];
-    [self.iv_canting_small.layer addAnimation:animation2 forKey:nil];
-    
-    [self performSelector:@selector(stopAnimation4) withObject:nil afterDelay:ANIMATION_DURATION];
-    [self performSelector:@selector(resetRunningAnimationState) withObject:nil afterDelay:ANIMATION_DURATION];
+    [self resetAllImage:0];
 }
 
--(void)stopAnimation4
-{
-    self.iv_woshi_big.hidden = YES;
-    self.iv_woshi_small.hidden = NO;
-}
+
 
 /** 点击餐厅小图片 */
 - (void)clickCantingSmall
@@ -179,25 +178,15 @@
         return;
     }
     
-    if (self.iv_keting_big.hidden == NO || self.iv_woshi_big.hidden == NO || self.iv_canting_big.hidden == NO) {
-        return;
+    
+    
+    if (currentState == 1 || currentState == 2) {
+        [self resetAllImage:3];
     }
-    
-    self.iv_keting_small.hidden = NO;
-    self.iv_woshi_small.hidden = NO;
-    self.iv_canting_small.hidden = YES;
-    self.iv_keting_big.hidden = YES;
-    self.iv_woshi_big.hidden = YES;
-    self.iv_canting_big.hidden = NO;
-    
-    isRunningAnimation = YES;
-    
-    CABasicAnimation *animation1 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:-135]];
-    [self.iv_keting_small.layer addAnimation:animation1 forKey:nil];
-    CABasicAnimation *animation2 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:-135*2]];
-    [self.iv_woshi_small.layer addAnimation:animation2 forKey:nil];
-    
-    [self performSelector:@selector(resetRunningAnimationState) withObject:nil afterDelay:ANIMATION_DURATION];
+    else
+    {
+        [self animation3];
+    }
 }
 
 /** 点击餐厅大图片 */
@@ -208,27 +197,46 @@
     }
 
     isRunningAnimation = YES;
-    
-    CABasicAnimation *animation1 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:135]];
-    [self.iv_keting_small.layer addAnimation:animation1 forKey:nil];
-    CABasicAnimation *animation2 = [AnimationHelper moveXWithTime:ANIMATION_DURATION X:[NSNumber numberWithFloat:135*2]];
-    [self.iv_woshi_small.layer addAnimation:animation2 forKey:nil];
-    
-    [self performSelector:@selector(stopAnimation6) withObject:nil afterDelay:ANIMATION_DURATION];
-    [self performSelector:@selector(resetRunningAnimationState) withObject:nil afterDelay:ANIMATION_DURATION];
+    [self resetAllImage:0];
 }
 
--(void)stopAnimation6
+
+
+/** 恢复所有图片位置 */
+- (void)resetAllImage:(int)type
 {
-    self.iv_canting_big.hidden = YES;
-    self.iv_canting_small.hidden = NO;
+    isRunningAnimation = YES;
+    [UIView transitionWithView:self.view duration:ANIMATION_DURATION options:UIViewAnimationOptionTransitionNone animations:^{
+        self.iv_keting_small.frame = CGRectMake(0, 0, PAD_WIDTH/3, PAD_HEIGHT);
+        self.iv_canting_small.frame = CGRectMake(PAD_WIDTH/3*2, 0, PAD_WIDTH/3, PAD_HEIGHT);
+        self.iv_woshi_small.frame = CGRectMake(PAD_WIDTH/3, 0, PAD_WIDTH/3, PAD_HEIGHT);
+    } completion:^(BOOL finished) {
+        self.iv_keting_small.hidden = NO;
+        self.iv_woshi_small.hidden = NO;
+        self.iv_canting_small.hidden = NO;
+        self.iv_keting_big.hidden = YES;
+        self.iv_woshi_big.hidden = YES;
+        self.iv_canting_big.hidden = YES;
+        isRunningAnimation = NO;
+        
+        switch (type) {
+            case 1:
+                [self animation1];
+                break;
+            case 2:
+                [self animation2];
+                break;
+            case 3:
+                [self animation3];
+                break;
+            default:
+                break;
+        }
+        
+    }];
 }
 
-/** 恢复运行动画状态标识 */
--(void)resetRunningAnimationState
-{
-    isRunningAnimation = NO;
-}
+
 
 /** 关闭此模态视图 */
 - (IBAction)back:(id)sender
